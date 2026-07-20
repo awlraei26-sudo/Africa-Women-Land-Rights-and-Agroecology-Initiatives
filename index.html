@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWLRAEI — Africa Women Land Rights and Agro Ecology Initiatives</title>
+<meta name="description" content="Africa Women Land Rights and Agro Ecology Initiatives (AWLRAEI) advances women's land rights, agroecology, and climate resilience across Africa. Based in Nyamira, Kenya.">
+<meta property="og:title" content="AWLRAEI — Africa Women Land Rights and Agro Ecology Initiatives">
+<meta property="og:description" content="A just and sustainable Africa where women have secure land rights, practice resilient agroecology, and lead thriving, inclusive communities.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  tailwind = { config: {
+    theme: {
+      extend: {
+        colors: {
+          gold: '#C9A227',
+          charcoal: '#1F1F1F',
+          forest: '#2E7D32',
+          earth: '#795548',
+          off: '#FAF8F2',
+        },
+        fontFamily: {
+          heading: ['Poppins','sans-serif'],
+          body: ['Inter','sans-serif'],
+        }
+      }
+    }
+  }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.4.1/tailwind.min.js" onerror="this.onerror=null;this.src='https://cdn.tailwindcss.com'"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+<!-- Loading overlay -->
+<div id="page-loader" class="fixed inset-0 z-[100] bg-charcoal flex items-center justify-center">
+  <span class="w-10 h-10 rounded-full border-2 border-off/20 border-t-gold animate-spin"></span>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="fixed top-0 inset-x-0 z-50 bg-off/95 backdrop-blur border-b border-charcoal/10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+    <a href="#home" class="flex items-center gap-3">
+      <span class="w-10 h-10 rounded-full bg-forest flex items-center justify-center">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C7 6 4 10 4 14a8 8 0 0016 0c0-4-3-8-8-12z" stroke="#FAF8F2" stroke-width="1.6"/></svg>
+      </span>
+      <span class="font-heading font-bold text-lg leading-tight text-charcoal">AWLRAEI</span>
+    </a>
+    <nav id="nav-links" class="hidden lg:flex items-center gap-8 text-sm font-medium text-charcoal/80">
+      <a href="#about" class="hover:text-forest transition">About</a>
+      <a href="#programs" class="hover:text-forest transition">Programs</a>
+      <a href="#projects" class="hover:text-forest transition">Projects</a>
+      <a href="#beneficiaries" class="hover:text-forest transition">Who We Serve</a>
+      <a href="#get-involved" class="hover:text-forest transition">Get Involved</a>
+      <a href="#contact" class="hover:text-forest transition">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="#volunteer" class="hidden md:inline-block text-sm font-semibold text-charcoal hover:text-forest transition">Volunteer</a>
+      <a href="#donate" class="bg-gold hover:bg-gold/90 text-charcoal font-heading font-semibold text-sm px-5 py-2.5 rounded-full transition">Donate</a>
+      <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-charcoal/15">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#1F1F1F" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="closed lg:hidden bg-off border-t border-charcoal/10 px-6 flex flex-col text-sm font-medium text-charcoal/80">
+    <a href="#about" class="py-3 border-b border-charcoal/5">About</a>
+    <a href="#programs" class="py-3 border-b border-charcoal/5">Programs</a>
+    <a href="#projects" class="py-3 border-b border-charcoal/5">Projects</a>
+    <a href="#beneficiaries" class="py-3 border-b border-charcoal/5">Who We Serve</a>
+    <a href="#get-involved" class="py-3 border-b border-charcoal/5">Get Involved</a>
+    <a href="#contact" class="py-3">Contact</a>
+  </nav>
+  <div class="weave-strip"></div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="relative grain-bg text-off pt-20">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-24 lg:py-36 grid lg:grid-cols-5 gap-14 items-center">
+    <div class="lg:col-span-3">
+      <p class="leaf-mark uppercase tracking-[0.25em] text-gold text-xs font-semibold mb-6">Nyamira, Kenya · Working Across Africa</p>
+      <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight">
+        Land in her name. <br class="hidden sm:block">
+        A future she leads.
+      </h1>
+      <p class="mt-7 text-off/80 text-lg max-w-xl leading-relaxed">
+        AWLRAEI stands with African women to secure land rights, restore soil and
+        forest through agroecology, and build community leadership that outlasts
+        any single harvest — for a continent free from poverty, inequality, and
+        environmental degradation.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="#donate" class="bg-gold text-charcoal font-heading font-semibold px-7 py-3.5 rounded-full hover:bg-off transition">Donate</a>
+        <a href="#membership" class="border border-off/40 font-heading font-semibold px-7 py-3.5 rounded-full hover:bg-off/10 transition">Join Us</a>
+        <a href="#partner" class="border border-off/40 font-heading font-semibold px-7 py-3.5 rounded-full hover:bg-off/10 transition">Become a Partner</a>
+        <a href="#volunteer" class="border border-off/40 font-heading font-semibold px-7 py-3.5 rounded-full hover:bg-off/10 transition">Volunteer</a>
+      </div>
+    </div>
+    <div class="lg:col-span-2">
+      <div class="relative rounded-3xl border border-off/15 bg-off/5 p-8 backdrop-blur-sm">
+        <p class="font-heading text-sm uppercase tracking-widest text-gold mb-4">Our Vision</p>
+        <p class="text-off/90 text-lg leading-relaxed">
+          "A just and sustainable Africa where women have secure land rights,
+          practice resilient agroecology, and lead thriving, inclusive
+          communities free from poverty, inequality, and environmental
+          degradation."
+        </p>
+        <div class="mt-6 h-px bg-off/15"></div>
+        <div class="mt-6 grid grid-cols-3 gap-4 text-center">
+          <div><p class="font-heading font-bold text-2xl text-gold">8</p><p class="text-xs text-off/70 mt-1">Core Programs</p></div>
+          <div><p class="font-heading font-bold text-2xl text-gold">7</p><p class="text-xs text-off/70 mt-1">Focus Areas</p></div>
+          <div><p class="font-heading font-bold text-2xl text-gold">8</p><p class="text-xs text-off/70 mt-1">Communities Served</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="weave-strip"></div>
+</section>
+
+<!-- ============ IMPACT COUNTERS ============ -->
+<section class="bg-charcoal text-off py-14">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div>
+      <p class="num-counter font-heading font-extrabold text-4xl text-gold" data-target="12400" data-suffix="+">0</p>
+      <p class="text-off/70 text-sm mt-2">Women reached</p>
+    </div>
+    <div>
+      <p class="num-counter font-heading font-extrabold text-4xl text-gold" data-target="3150">0</p>
+      <p class="text-off/70 text-sm mt-2">Acres under agroecology</p>
+    </div>
+    <div>
+      <p class="num-counter font-heading font-extrabold text-4xl text-gold" data-target="96000">0</p>
+      <p class="text-off/70 text-sm mt-2">Trees planted</p>
+    </div>
+    <div>
+      <p class="num-counter font-heading font-extrabold text-4xl text-gold" data-target="210">0</p>
+      <p class="text-off/70 text-sm mt-2">Savings & farmer groups</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / MISSION / VALUES ============ -->
+<section id="about" class="py-24 field-mark">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-2 gap-14 mb-20">
+      <div>
+        <p class="leaf-mark uppercase tracking-[0.25em] text-forest text-xs font-semibold mb-4">Our Mission</p>
+        <p class="font-heading font-semibold text-2xl lg:text-3xl leading-snug text-charcoal">
+          To empower women and communities across Africa by advancing secure
+          land rights, promoting agroecological farming, strengthening climate
+          resilience, and building the capacity of women to lead in
+          agriculture, conservation, and policy.
+        </p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-charcoal/5">
+        <p class="font-heading text-sm uppercase tracking-widest text-earth mb-3">Why AWLRAEI exists</p>
+        <p class="text-charcoal/75 leading-relaxed">
+          Across much of Africa, women grow the food but rarely hold title to
+          the land they farm. That gap keeps households poorer, soils more
+          degraded, and communities more exposed to climate shocks than they
+          need to be. AWLRAEI works at the intersection of land justice and
+          regenerative farming, because neither can hold without the other.
+        </p>
+      </div>
+    </div>
+
+    <!-- Core Values -->
+    <p class="leaf-mark uppercase tracking-[0.25em] text-forest text-xs font-semibold mb-6">Core Values</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
+      <div class="card-lift bg-white rounded-2xl p-6 border border-charcoal/5">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="mb-4"><path d="M12 21s-7-4.35-9.5-9C1 8 3 4 7 4c2 0 4 1 5 3 1-2 3-3 5-3 4 0 6 4 4.5 8-2.5 4.65-9.5 9-9.5 9z" stroke="#2E7D32" stroke-width="1.6"/></svg>
+        <h3 class="font-heading font-semibold text-charcoal">Gender Equality</h3>
+        <p class="text-sm text-charcoal/60 mt-2">Equal voice and equal ownership, in the home and on the land.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 border border-charcoal/5">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="mb-4"><path d="M12 3v18M4 8h16M6 8l-3 6h6l-3-6zM18 8l-3 6h6l-3-6z" stroke="#2E7D32" stroke-width="1.6"/></svg>
+        <h3 class="font-heading font-semibold text-charcoal">Justice & Equity</h3>
+        <p class="text-sm text-charcoal/60 mt-2">Fair access to land, resources, and decision-making power.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 border border-charcoal/5">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="mb-4"><path d="M12 2C7 6 4 10 4 14a8 8 0 0016 0c0-4-3-8-8-12z" stroke="#2E7D32" stroke-width="1.6"/></svg>
+        <h3 class="font-heading font-semibold text-charcoal">Sustainability</h3>
+        <p class="text-sm text-charcoal/60 mt-2">Practices that regenerate soil, forest, and water for the long run.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 border border-charcoal/5">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="mb-4"><circle cx="12" cy="8" r="4" stroke="#2E7D32" stroke-width="1.6"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke="#2E7D32" stroke-width="1.6"/></svg>
+        <h3 class="font-heading font-semibold text-charcoal">Empowerment</h3>
+        <p class="text-sm text-charcoal/60 mt-2">Skills, capital, and confidence women carry beyond any one project.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 border border-charcoal/5">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="mb-4"><path d="M12 2l2.2 6.8H21l-5.6 4.1L17.6 20 12 15.9 6.4 20l2.2-7.1L3 8.8h6.8z" stroke="#2E7D32" stroke-width="1.6"/></svg>
+        <h3 class="font-heading font-semibold text-charcoal">Integrity</h3>
+        <p class="text-sm text-charcoal/60 mt-2">Transparent use of every donation, hour, and hectare entrusted to us.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 border border-charcoal/5">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="mb-4"><circle cx="8" cy="8" r="3" stroke="#2E7D32" stroke-width="1.6"/><circle cx="17" cy="9" r="3" stroke="#2E7D32" stroke-width="1.6"/><path d="M3 20c0-3 2.5-5 5-5s5 2 5 5M12 20c0-2.5 2-4.5 5-4.5s5 2 5 4.5" stroke="#2E7D32" stroke-width="1.6"/></svg>
+        <h3 class="font-heading font-semibold text-charcoal">Collaboration</h3>
+        <p class="text-sm text-charcoal/60 mt-2">Government, civil society, and universities working as one field.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 border border-charcoal/5">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="mb-4"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3 11c.6.5 1 1.2 1 2h4c0-.8.4-1.5 1-2a6 6 0 00-3-11z" stroke="#2E7D32" stroke-width="1.6"/></svg>
+        <h3 class="font-heading font-semibold text-charcoal">Innovation</h3>
+        <p class="text-sm text-charcoal/60 mt-2">New tools for old problems — from seed banks to policy dashboards.</p>
+      </div>
+      <div class="card-lift bg-white rounded-2xl p-6 border border-charcoal/5">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="mb-4"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z" stroke="#2E7D32" stroke-width="1.6"/></svg>
+        <h3 class="font-heading font-semibold text-charcoal">Human Rights</h3>
+        <p class="text-sm text-charcoal/60 mt-2">Land and dignity treated as rights, not privileges.</p>
+      </div>
+    </div>
+
+    <!-- Strategic Objectives -->
+    <p class="leaf-mark uppercase tracking-[0.25em] text-forest text-xs font-semibold mb-6">Strategic Objectives</p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="rounded-2xl bg-charcoal text-off p-6">
+        <h3 class="font-heading font-semibold">Women's Land Rights</h3>
+        <p class="text-sm text-off/60 mt-2">Secure, documented ownership and inheritance protection.</p>
+      </div>
+      <div class="rounded-2xl bg-forest text-off p-6">
+        <h3 class="font-heading font-semibold">Agroecology</h3>
+        <p class="text-sm text-off/70 mt-2">Farming that works with the land, not against it.</p>
+      </div>
+      <div class="rounded-2xl bg-charcoal text-off p-6">
+        <h3 class="font-heading font-semibold">Climate Resilience</h3>
+        <p class="text-sm text-off/60 mt-2">Restoration and adaptation ahead of the next drought.</p>
+      </div>
+      <div class="rounded-2xl bg-forest text-off p-6">
+        <h3 class="font-heading font-semibold">Women's Leadership</h3>
+        <p class="text-sm text-off/70 mt-2">Seats at the table where land and budgets are decided.</p>
+      </div>
+      <div class="rounded-2xl bg-forest text-off p-6">
+        <h3 class="font-heading font-semibold">Livelihoods</h3>
+        <p class="text-sm text-off/70 mt-2">Income that grows with the harvest, not despite it.</p>
+      </div>
+      <div class="rounded-2xl bg-charcoal text-off p-6">
+        <h3 class="font-heading font-semibold">Partnerships</h3>
+        <p class="text-sm text-off/60 mt-2">Government, civil society, and academic alliances.</p>
+      </div>
+      <div class="rounded-2xl bg-charcoal text-off p-6">
+        <h3 class="font-heading font-semibold">Advocacy & Awareness</h3>
+        <p class="text-sm text-off/60 mt-2">Policy and public opinion moved by evidence.</p>
+      </div>
+      <div class="rounded-2xl bg-gold text-charcoal p-6">
+        <h3 class="font-heading font-semibold">Monitoring & Learning</h3>
+        <p class="text-sm text-charcoal/70 mt-2">Every program measured, reported, and improved.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="weave-strip"></div>
+
+<!-- ============ PROGRAMS ============ -->
+<section id="programs" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-2xl mb-14">
+      <p class="leaf-mark uppercase tracking-[0.25em] text-forest text-xs font-semibold mb-4">Programs</p>
+      <h2 class="font-heading font-bold text-3xl lg:text-4xl text-charcoal">Eight programs, one field of work</h2>
+      <p class="text-charcoal/60 mt-4">From title deeds to tree canopies, each program reinforces the next.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <details class="group border border-charcoal/10 rounded-2xl p-6 open:bg-off/60" open>
+        <summary class="flex items-center justify-between font-heading font-semibold text-lg text-charcoal">
+          Land Rights <span class="text-gold group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-charcoal/60 mt-3">Women's land ownership · legal awareness · policy advocacy · community land governance</p>
+      </details>
+      <details class="group border border-charcoal/10 rounded-2xl p-6 open:bg-off/60">
+        <summary class="flex items-center justify-between font-heading font-semibold text-lg text-charcoal">
+          Agroecology <span class="text-gold group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-charcoal/60 mt-3">Organic farming · regenerative agriculture · Farmer Field Schools · indigenous seed preservation</p>
+      </details>
+      <details class="group border border-charcoal/10 rounded-2xl p-6 open:bg-off/60">
+        <summary class="flex items-center justify-between font-heading font-semibold text-lg text-charcoal">
+          Climate Action <span class="text-gold group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-charcoal/60 mt-3">Tree planting · agroforestry · water harvesting · environmental restoration</p>
+      </details>
+      <details class="group border border-charcoal/10 rounded-2xl p-6 open:bg-off/60">
+        <summary class="flex items-center justify-between font-heading font-semibold text-lg text-charcoal">
+          Women's Economic Empowerment <span class="text-gold group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-charcoal/60 mt-3">Entrepreneurship · agribusiness · financial literacy · savings groups · market access</p>
+      </details>
+      <details class="group border border-charcoal/10 rounded-2xl p-6 open:bg-off/60">
+        <summary class="flex items-center justify-between font-heading font-semibold text-lg text-charcoal">
+          Leadership Development <span class="text-gold group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-charcoal/60 mt-3">Women leaders · youth leadership · governance · capacity building</p>
+      </details>
+      <details class="group border border-charcoal/10 rounded-2xl p-6 open:bg-off/60">
+        <summary class="flex items-center justify-between font-heading font-semibold text-lg text-charcoal">
+          Research & Policy <span class="text-gold group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-charcoal/60 mt-3">Knowledge management · policy briefs · research · stakeholder forums</p>
+      </details>
+      <details class="group border border-charcoal/10 rounded-2xl p-6 open:bg-off/60">
+        <summary class="flex items-center justify-between font-heading font-semibold text-lg text-charcoal">
+          Community Education <span class="text-gold group-open:rotate-45 transition">+</span>
+        </summary>
+        <p class="text-sm text-charcoal/60 mt-3">Awareness campaigns · community outreach · media engagement · workshops</p>
+      </details>
+      <details class="group border border-charcoal/10 rounded-2xl p-6 open:bg-off/60">
+        <summary class="flex
