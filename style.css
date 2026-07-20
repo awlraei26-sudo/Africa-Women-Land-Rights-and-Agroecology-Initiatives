@@ -1,18 +1,40 @@
-root{
+:root{
 
-    --primary:#C9A227;
-    --secondary:#1E1E1E;
-    --dark:#121212;
-    --white:#ffffff;
-    --light:#f8f9fa;
-    --gray:#777777;
-    --border:#e6e6e6;
-    --shadow:0 10px 30px rgba(0,0,0,.10);
-    --radius:12px;
-    --transition:.4s ease;
+    /* =========================
+       AWLRAEI BRAND COLOURS
+    ========================== */
+
+    --primary: #F4A300;          /* Logo Gold */
+    --primary-light: #FFD166;    /* Light Gold */
+    --primary-dark: #C98300;     /* Dark Gold */
+
+    --secondary: #2B2B2B;        /* Charcoal Black */
+    --dark: #1A1A1A;             /* Deep Black */
+
+    --green: #4CAF50;            /* Agroecology Green */
+    --green-dark: #2E7D32;
+
+    --white: #FFFFFF;
+    --light: #F8F9FA;
+    --gray: #6B7280;
+    --border: #E5E7EB;
+
+    /* Text */
+    --text: #2B2B2B;
+    --text-light: #6B7280;
+
+    /* Shadows */
+    --shadow: 0 10px 30px rgba(43,43,43,0.15);
+    --shadow-lg: 0 20px 45px rgba(43,43,43,0.25);
+
+    /* Border Radius */
+    --radius: 12px;
+    --radius-lg: 18px;
+
+    /* Animation */
+    --transition: all .35s ease;
 
 }
-
 *{
     margin:0;
     padding:0;
