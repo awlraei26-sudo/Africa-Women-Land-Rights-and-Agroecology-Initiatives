@@ -1,3 +1,75 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.4s ease;
+}
+
+.hero-slide.is-active {
+    opacity: 1;
+}
+
+/* Keep your existing .hero-overlay and .hero-content above the slides */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-dots {
+    position: absolute;
+    z-index: 2;
+    bottom: 1.75rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.hero-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-dot.is-active {
+    background: #E0B24B;
+    transform: scale(1.25);
+}
+
+.hero-dot:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-slide {
+        transition: none;
+    }
+}
 /*=========================================
 AWLRAEI BRAND THEME
 =========================================*/
@@ -969,4 +1041,3 @@ SMALL PHONES
 /*=========================================
 END OF STYLESHEET
 =========================================*/
-
