@@ -216,37 +216,45 @@ revealElements.forEach(element => {
 
 // Contact Form
 const form = document.querySelector(".contact-form");
+const result = document.getElementById("result");
 
 if (form) {
 
-    form.addEventListener("submit", function(e) {
+    form.addEventListener("submit", async function (e) {
 
         e.preventDefault();
 
-        const inputs = form.querySelectorAll("input, textarea");
+        result.innerHTML = "Sending...";
 
-        let valid = true;
+        const formData = new FormData(form);
 
-        inputs.forEach(input => {
+        try {
 
-            if (input.hasAttribute("required") && input.value.trim() === "") {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: formData
+            });
 
-                input.style.border = "2px solid red";
-                valid = false;
+            const data = await response.json();
+
+            if (data.success) {
+
+                result.style.color = "green";
+                result.innerHTML = "✅ Thank you! Your message has been sent successfully.";
+
+                form.reset();
 
             } else {
 
-                input.style.border = "1px solid #ddd";
+                result.style.color = "red";
+                result.innerHTML = "❌ Failed to send message.";
 
             }
 
-        });
+        } catch (error) {
 
-        if (valid) {
-
-            alert("Thank you! Your message has been sent successfully.");
-
-            form.reset();
+            result.style.color = "red";
+            result.innerHTML = "❌ Network error. Please try again.";
 
         }
 
