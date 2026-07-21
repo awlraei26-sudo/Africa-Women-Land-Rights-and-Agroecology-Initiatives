@@ -215,52 +215,42 @@ revealElements.forEach(element => {
 });
 
 // Contact Form
-const form = document.querySelector(".contact-form");
-const result = document.getElementById("result");
+const form = document.getElementById('form');
+const submitBtn = form.querySelector('button[type="submit"]');
 
-if (form) {
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    form.addEventListener("submit", async function (e) {
+    const formData = new FormData(form);
+    formData.append("access_key", "5ac9649a-6069-4add-aae9-ff44fbbf308c");
 
-        e.preventDefault();
+    const originalText = submitBtn.textContent;
 
-        result.innerHTML = "Sending...";
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
 
-        const formData = new FormData(form);
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
 
-        try {
+        const data = await response.json();
 
-            const response = await fetch(form.action, {
-                method: "POST",
-                body: formData
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-
-                result.style.color = "green";
-                result.innerHTML = "✅ Thank you! Your message has been sent successfully.";
-
-                form.reset();
-
-            } else {
-
-                result.style.color = "red";
-                result.innerHTML = "❌ Failed to send message.";
-
-            }
-
-        } catch (error) {
-
-            result.style.color = "red";
-            result.innerHTML = "❌ Network error. Please try again.";
-
+        if (response.ok) {
+            alert("Success! Your message has been sent.");
+            form.reset();
+        } else {
+            alert("Error: " + data.message);
         }
 
-    });
-
-}
+    } catch (error) {
+        alert("Something went wrong. Please try again.");
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
+});
 
 // Loading Animation
 window.addEventListener("load", () => {
