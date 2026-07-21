@@ -65,6 +65,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <section class="hero" id="home">
 
+    <!-- SLIDESHOW: background images crossfade behind the existing overlay/content -->
+    <div class="hero-slideshow" id="heroSlideshow">
+        <div class="hero-slide is-active" style="background-image:url('images/hero1.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/hero2.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/hero3.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/hero4.jpg')"></div>
+    </div>
+
     <div class="hero-overlay"></div>
 
     <div class="container hero-content">
@@ -94,6 +102,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         </div>
 
     </div>
+
+    <!-- SLIDESHOW: dot navigation -->
+    <div class="hero-dots" id="heroDots"></div>
 
 </section>
 
@@ -655,6 +666,9 @@ Key Programme Areas
 </button>
 
 <script src="script.js"></script>
+
+<!-- SLIDESHOW: hero slideshow logic (kept separate so it's easy to remove) -->
+<script src="hero-slideshow.js"></script>
 
 </body>
 </html>
