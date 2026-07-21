@@ -591,23 +591,44 @@ Key Programme Areas
                 </p>
 
             </div>
+<form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
 
-            <form class="contact-form">
+    <!-- Replace with your Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
 
-                <input type="text" placeholder="Your Name" required>
+    <!-- Optional -->
+    <input type="hidden" name="botcheck" style="display:none;">
 
-                <input type="email" placeholder="Your Email" required>
+    <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required>
 
-                <input type="text" placeholder="Subject">
+    <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required>
 
-                <textarea rows="6" placeholder="Your Message"></textarea>
+    <input
+        type="text"
+        name="subject"
+        placeholder="Subject">
 
-                <button type="submit" class="btn primary-btn">
-                    Send Message
-                </button>
+    <textarea
+        name="message"
+        rows="6"
+        placeholder="Your Message"
+        required></textarea>
 
-            </form>
+    <button type="submit" class="btn primary-btn">
+        Send Message
+    </button>
 
+</form>
+
+<p id="result"></p>
         </div>
 
     </div>
