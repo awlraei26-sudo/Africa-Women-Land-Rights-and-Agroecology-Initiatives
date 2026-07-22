@@ -407,19 +407,14 @@ STATS
 /*=========================================
 ABOUT
 =========================================*/
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
+  
+.about-grid {
+    display: flex;
+    justify-content: center;
+    max-width: 800px;        /* Keeps line length readable */
+    margin: 0 auto;          /* Centers the block on the page */
+    text-align: left;        /* Keeps the text reading left-to-right */
 }
-
-.about-image img{
-    border-radius:var(--radius-lg);
-    box-shadow:var(--shadow-lg);
-}
-
 .about-content p{
     margin:20px 0;
     color:var(--gray);
@@ -430,7 +425,6 @@ ABOUT
     color:var(--secondary);
     margin-bottom:20px;
 }
-
 /*=========================================
 VISION & MISSION
 =========================================*/
