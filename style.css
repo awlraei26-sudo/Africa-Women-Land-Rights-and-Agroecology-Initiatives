@@ -1,3 +1,54 @@
+// ================= HERO SLIDESHOW =================
+// Crossfades .hero-slide elements inside #heroSlideshow and builds
+// dot navigation inside #heroDots. Pauses on hover, respects
+// prefers-reduced-motion.
+
+(function () {
+  const slideshow = document.getElementById('heroSlideshow');
+  const dotsWrap = document.getElementById('heroDots');
+  if (!slideshow || !dotsWrap) return;
+
+  const slides = Array.from(slideshow.querySelectorAll('.hero-slide'));
+  let current = 0;
+  let timer = null;
+  const INTERVAL = 5500;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'hero-dot' + (i === 0 ? ' is-active' : '');
+    dot.setAttribute('aria-label', 'Show slide ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.querySelectorAll('.hero-dot'));
+
+  function goTo(index) {
+    slides[current].classList.remove('is-active');
+    dots[current].classList.remove('is-active');
+    current = index;
+    slides[current].classList.add('is-active');
+    dots[current].classList.add('is-active');
+  }
+
+  function next() {
+    goTo((current + 1) % slides.length);
+  }
+
+  function start() {
+    if (prefersReducedMotion || slides.length < 2) return;
+    timer = setInterval(next, INTERVAL);
+  }
+
+  function stop() {
+    clearInterval(timer);
+  }
+
+  slideshow.addEventListener('mouseenter', stop);
+  slideshow.addEventListener('mouseleave', start);
+
+  start();
+})();
 .hero {
     position: relative;
     overflow: hidden;
