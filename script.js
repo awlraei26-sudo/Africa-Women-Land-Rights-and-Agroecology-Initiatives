@@ -215,7 +215,11 @@ revealElements.forEach(element => {
 });
 
 // Contact Form
-const form = document.getElementById('form');
+// FIX: was document.getElementById('form') which returned null,
+// since the form has no id (only class="contact-form"). That null
+// reference threw an error and silently stopped every script below
+// it from running on this page.
+const form = document.querySelector('.contact-form');
 const submitBtn = form.querySelector('button[type="submit"]');
 
 form.addEventListener('submit', async (e) => {
@@ -274,49 +278,6 @@ if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 
 }
-// ================= HERO SLIDESHOW =================
-// Crossfades .hero-slide elements inside #heroSlideshow and builds
-// dot navigation inside #heroDots.
 
-(function () {
-    const slideshow = document.getElementById("heroSlideshow");
-    const dotsWrap = document.getElementById("heroDots");
-
-    if (!slideshow || !dotsWrap) return;
-
-    const slides = Array.from(slideshow.querySelectorAll(".hero-slide"));
-    let current = 0;
-    let timer = null;
-    const INTERVAL = 5500;
-
-    slides.forEach((_, i) => {
-        const dot = document.createElement("button");
-        dot.className = "hero-dot" + (i === 0 ? " is-active" : "");
-        dot.setAttribute("aria-label", "Show slide " + (i + 1));
-        dot.addEventListener("click", () => goTo(i));
-        dotsWrap.appendChild(dot);
-    });
-
-    const dots = Array.from(dotsWrap.querySelectorAll(".hero-dot"));
-
-    function goTo(index) {
-        slides[current].classList.remove("is-active");
-        dots[current].classList.remove("is-active");
-
-        current = index;
-
-        slides[current].classList.add("is-active");
-        dots[current].classList.add("is-active");
-    }
-
-    function next() {
-        goTo((current + 1) % slides.length);
-    }
-
-    timer = setInterval(next, INTERVAL);
-
-    slideshow.addEventListener("mouseenter", () => clearInterval(timer));
-    slideshow.addEventListener("mouseleave", () => {
-        timer = setInterval(next, INTERVAL);
-    });
-})();
+// NOTE: Hero slideshow logic lives in hero-slideshow.js (loaded separately
+// in index.html), so it's intentionally not duplicated here.
