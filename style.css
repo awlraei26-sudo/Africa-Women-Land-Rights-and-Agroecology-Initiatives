@@ -1,8 +1,24 @@
-// ================= HERO SLIDESHOW =================
-// Crossfades .hero-slide elements inside #heroSlideshow and builds
-// dot navigation inside #heroDots. Pauses on hover, respects
-// prefers-reduced-motion.
+ .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
 
+    .slideshow-container img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .slideshow-container img.active {
+      opacity: 1;
+    }
 (function () {
   const slideshow = document.getElementById('heroSlideshow');
   const dotsWrap = document.getElementById('heroDots');
