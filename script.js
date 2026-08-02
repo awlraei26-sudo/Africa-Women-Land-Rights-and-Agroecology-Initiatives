@@ -1,54 +1,81 @@
+/*=========================================
+Hero Slideshow
+=========================================*/
+
 const slideshow = document.getElementById("heroSlideshow");
-const slides = slideshow.querySelectorAll(".slide");
 const dotsContainer = document.getElementById("heroDots");
 
-let current = 0;
+if (slideshow && dotsContainer) {
 
-slides.forEach((slide, index) => {
+    const slides = slideshow.querySelectorAll(".slide");
 
-    const dot = document.createElement("button");
+    let current = 0;
+    let autoSlide;
 
-    dot.className = "hero-dot";
+    // Create dots
+    slides.forEach((slide, index) => {
 
-    if(index === 0){
-        dot.classList.add("active");
-    }
+        const dot = document.createElement("button");
+        dot.className = "hero-dot";
 
-    dot.addEventListener("click", () => {
-        showSlide(index);
+        if (index === 0) {
+            dot.classList.add("active");
+        }
+
+        dot.addEventListener("click", () => {
+            showSlide(index);
+            restartAutoSlide();
+        });
+
+        dotsContainer.appendChild(dot);
+
     });
 
-    dotsContainer.appendChild(dot);
+    const dots = dotsContainer.querySelectorAll(".hero-dot");
 
-});
+    function showSlide(index) {
 
-const dots = document.querySelectorAll(".hero-dot");
+        slides[current].classList.remove("active");
+        dots[current].classList.remove("active");
 
-function showSlide(index){
+        current = index;
 
-    slides[current].classList.remove("active");
-    dots[current].classList.remove("active");
+        slides[current].classList.add("active");
+        dots[current].classList.add("active");
 
-    current = index;
-
-    slides[current].classList.add("active");
-    dots[current].classList.add("active");
-
-}
-
-function nextSlide(){
-
-    let next = current + 1;
-
-    if(next >= slides.length){
-        next = 0;
     }
 
-    showSlide(next);
+    function nextSlide() {
+
+        current++;
+
+        if (current >= slides.length) {
+            current = 0;
+        }
+
+        showSlide(current);
+
+    }
+
+    function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 5000);
+    }
+
+    function restartAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+    }
+
+    // Pause on hover (desktop)
+    slideshow.addEventListener("mouseenter", () => {
+        clearInterval(autoSlide);
+    });
+
+    slideshow.addEventListener("mouseleave", startAutoSlide);
+
+    startAutoSlide();
 
 }
-
-setInterval(nextSlide,5000);
 /*=========================================
 AWLRAEI Website JavaScript
 =========================================*/
