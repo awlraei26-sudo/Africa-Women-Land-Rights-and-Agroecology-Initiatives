@@ -1,141 +1,65 @@
- .slideshow-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .slideshow-container img {
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1.5s ease-in-out;
-    }
-
-    .slideshow-container img.active {
-      opacity: 1;
-    }
-(function () {
-  const slideshow = document.getElementById('heroSlideshow');
-  const dotsWrap = document.getElementById('heroDots');
-  if (!slideshow || !dotsWrap) return;
-
-  const slides = Array.from(slideshow.querySelectorAll('.hero-slide'));
-  let current = 0;
-  let timer = null;
-  const INTERVAL = 5500;
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'hero-dot' + (i === 0 ? ' is-active' : '');
-    dot.setAttribute('aria-label', 'Show slide ' + (i + 1));
-    dot.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(dot);
-  });
-  const dots = Array.from(dotsWrap.querySelectorAll('.hero-dot'));
-
-  function goTo(index) {
-    slides[current].classList.remove('is-active');
-    dots[current].classList.remove('is-active');
-    current = index;
-    slides[current].classList.add('is-active');
-    dots[current].classList.add('is-active');
-  }
-
-  function next() {
-    goTo((current + 1) % slides.length);
-  }
-
-  function start() {
-    if (prefersReducedMotion || slides.length < 2) return;
-    timer = setInterval(next, INTERVAL);
-  }
-
-  function stop() {
-    clearInterval(timer);
-  }
-
-  slideshow.addEventListener('mouseenter', stop);
-  slideshow.addEventListener('mouseleave', start);
-
-  start();
-})();
-.hero {
-    position: relative;
-    overflow: hidden;
+.hero{
+    position:relative;
+    min-height:100vh;
+    overflow:hidden;
 }
 
-.hero-slideshow {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+.slideshow-container{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:0;
 }
 
-.hero-slide {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1.4s ease;
+.slide{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity 1.5s ease-in-out;
 }
 
-.hero-slide.is-active {
-    opacity: 1;
+.slide.active{
+    opacity:1;
 }
 
-/* Keep your existing .hero-overlay and .hero-content above the slides */
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:1;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
+.hero-content{
+    position:relative;
+    z-index:2;
 }
 
-.hero-dots {
-    position: absolute;
-    z-index: 2;
-    bottom: 1.75rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.5rem;
+.hero-dots{
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:10px;
+    z-index:2;
 }
 
-.hero-dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: background 0.2s ease, transform 0.2s ease;
+.hero-dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+    background:rgba(255,255,255,.4);
 }
 
-.hero-dot.is-active {
-    background: #E0B24B;
-    transform: scale(1.25);
-}
-
-.hero-dot:focus-visible {
-    outline: 2px solid #ffffff;
-    outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .hero-slide {
-        transition: none;
-    }
+.hero-dot.active{
+    background:#F4A300;
 }
 /*=========================================
 AWLRAEI BRAND THEME
@@ -330,57 +254,6 @@ HEADER
     color:var(--secondary);
 }
 
-/*=========================================
-HERO
-=========================================*/
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    position:relative;
-    overflow:hidden;
-    background:none;
-}
-
-.hero-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        rgba(26,26,26,.82),
-        rgba(43,43,43,.65)
-    );
-}
-
-.hero-content{
-    position:relative;
-    color:var(--white);
-    max-width:760px;
-}
-
-.hero-subtitle{
-    color:var(--primary);
-    font-size:20px;
-    font-weight:600;
-}
-
-.hero h1{
-    font-size:60px;
-    line-height:1.2;
-    margin:20px 0;
-}
-
-.hero p{
-    font-size:20px;
-    margin-bottom:35px;
-    color:#f2f2f2;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-}
 /*=========================================
 STATS
 =========================================*/
